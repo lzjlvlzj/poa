@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.lzj.poa.entity">
+    <class name="User" table="poa_user">
+        <id name="userId" column="user_id">
+            <generator class="native"/>
+        </id>
+        <property name="loginName" column="user_lgname"/>
+        <property name="password" column="user_password"/>
+        <property name="userName" column="user_name"/>
+        <property name="gender" column="user_gender"/>
+        <property name="phone" column="user_phone"/>
+        <property name="email" column="user_email"/>
+        <property name="qq" column="user_qq"/>
+        <property name="status" column="user_status"/>
+        <property name="lastEmailTime" column="user_let"/>
+        <property name="birthDay" column="user_birthday"/>
+        <property name="description" column="user_desc"/>
+        <property name="createTime" column="user_ctm"/>
+        
+        <!-- 用户和岗位对应关系 多对多 -->
+         <set name="roles" table="poa_user_role" lazy="false">  
+            <key column="user_id" />  
+            <many-to-many class="Role" column="role_id" />  
+         </set>
+        
+        <!-- 用户和部门对应关系 多对一 -->
+      	<many-to-one name="department" class="Department" column="dept_id"/>
+        
+        
+    </class>
+</hibernate-mapping>

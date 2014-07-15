@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.lzj.poa.entity">
+    <class name="Privilege" table="poa_privilege">
+        <id name="prid" column="pri_id">
+            <generator class="native"/>
+        </id>
+        <property name="privilegeName" column="pri_name"/>
+        <property name="url" column="pri_url"/>
+        <property name="description" column="pri_desc"/>
+        <!-- 与角色关系 多对多 -->
+        <set name="roles" table="poa_privilege_role">
+        	<key column="pri_id"></key>
+        	<many-to-many class="Role" column="role_id"></many-to-many>
+        </set>
+        
+        <!-- 与上级关系多对一 -->
+        <many-to-one name="parent" class="Privilege" column="pri_pid"></many-to-one>
+        
+        <!-- 与下级关系一对多 -->
+        <set name="children" order-by="prid ASC" lazy="false">
+        	<key column="pri_pid"></key>
+        	<one-to-many class="Privilege"/>
+        </set>
+        
+    </class>
+</hibernate-mapping>

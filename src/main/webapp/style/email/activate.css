@@ -1,0 +1,24 @@
+.actv_main{width:650px; margin:auto;padding-bottom:40px;}
+.actv_main p{color:#333333; line-height:28px;}
+.actv_main a{color:#125a9c;}
+.actv_tit{ margin-top:50px; height:60px;}
+.bul{color:#125a9c;}
+
+.mergle{ margin-left:52px;}
+.user_mail{height:30px; width:650px; overflow:hidden;}
+
+.go_mail{ background:url(../images/email/goto_email.png) no-repeat; width:232px; height:32px; border:none;float:left;display:inline;margin-top:8px;}
+
+/* 修改密码成功 */
+
+.pass_secc{ margin-left:52px;}
+.pass_secc a{ text-decoration:underline;}
+.lule{color:#125a9c; margin-right:5px;}
+
+
+/* 服务条款 */
+.server{width:870px;margin:auto;}
+.server_top{text-align:center;font-size:18px;font-weight:bold;height:30px;}
+  
+.server h3{ color:#0c43a7; height:40px; line-height:40px;}	   
+.server p{text-indent:2em;line-height:25px;font-size:12px;}
