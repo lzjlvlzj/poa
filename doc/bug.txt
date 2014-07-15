@@ -1,0 +1,4 @@
+1、图片提交时 Error setting expression 'y' with value ['17', ]
+2、不能关联删除
+3、service层公共代码的抽取
+4、用户生日参数接受(自己写拦截器 黎活明老师视频)
