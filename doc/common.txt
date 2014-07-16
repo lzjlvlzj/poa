@@ -1,0 +1,64 @@
+一工程搭建
+1、添加struts2
+	asm-3.3.jar
+	asm-commons-3.3.jar
+	asm-tree-3.3.jar
+	commons-fileupload-1.3.1.jar
+	commons-io-2.2.jar
+	commons-lang3-3.1.jar
+	commons-logging-1.1.3.jar
+	freemarker-2.3.19.jar
+	javassist-3.11.0.GA.jar
+	log4j-1.2.17.jar
+	ognl-3.0.6.jar
+	struts2-core-2.3.16.1.jar
+	xwork-core-2.3.16.1.jar
+2、添加spring
+	spring-core-3.2.0.RELEASE.jar
+	spring-aop-3.2.0.RELEASE.jar
+	spring-orm-3.2.0.RELEASE.jar(hibernate不需要，已经集成)
+	spring-beans-3.2.0.RELEASE.jar
+	spring-context-3.2.0.RELEASE.jar
+	spring-tx-3.2.0.RELEASE.jar //事务
+	
+3、添加hibernate
+	hibernate-core-4.3.5.Final.jar
+	hibernate-commons-annotations-4.0.4.Final.jar
+	hibernate-jpa-2.1-api-1.0.0.Final.jar
+4、其他
+	数据库连接池  memechaced json 
+	c3p0
+	c3p0-0.9.2.1.jar
+	
+
+4、框架整合
+//-----------------------------
+action 模板
+
+public String list(){
+		return "list";
+	}
+	
+	public String delete(){
+		return "toList";
+	}
+	
+	/** 添加页面 */
+	public String addUI() {
+		return "saveUI";
+	}
+	
+	/** 添加 */
+	public String add(){
+		return "toList";
+	}
+
+	/** 修改页面 */
+	public String editUI()  {
+		return "saveUI";
+	}
+	/** 修改 */
+	public String edit()  {
+		return "toList";
+	}
+//-------------------------
