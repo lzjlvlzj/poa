@@ -28,6 +28,7 @@
         <mapping resource="org/lzj/poa/entity/User.hbm.xml"/>
         <mapping resource="org/lzj/poa/entity/Department.hbm.xml"/>
         <mapping resource="org/lzj/poa/entity/Privilege.hbm.xml"/>
+        <mapping resource="org/lzj/poa/entity/Forum.hbm.xml"/>
           
         
         

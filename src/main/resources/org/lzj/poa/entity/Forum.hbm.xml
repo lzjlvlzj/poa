@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.lzj.poa.entity">
+    <class name="Forum" table="poa_forum">
+        <id name="forumId" column="forum_id">
+            <generator class="native"/>
+        </id>
+        <property name="forumName" column="forum_name"/>
+        <property name="position" column="forum_position"/>
+        <property name="description" column="forum_desc"/>
+        <property name="createTime" column="forum_ctm"/>
+    </class>
+</hibernate-mapping>
