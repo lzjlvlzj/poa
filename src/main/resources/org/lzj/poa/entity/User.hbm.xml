@@ -6,7 +6,7 @@
         <id name="userId" column="user_id">
             <generator class="native"/>
         </id>
-        <property name="loginName" column="user_lgname"/>
+        <property name="loginName" column="user_lgname" unique="true"/>
         <property name="password" column="user_password"/>
         <property name="userName" column="user_name"/>
         <property name="gender" column="user_gender"/>
