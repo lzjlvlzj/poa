@@ -3,6 +3,7 @@ package org.lzj.poa.web.action;
 import java.lang.reflect.ParameterizedType;
 
 import org.lzj.poa.service.DepartmentService;
+import org.lzj.poa.service.ForumManageService;
 import org.lzj.poa.service.PrivilegeService;
 import org.lzj.poa.service.RoleService;
 import org.lzj.poa.service.UserService;
@@ -45,6 +46,9 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	
 	@Autowired
 	protected PrivilegeService privilegeServiceImpl;
+	
+	@Autowired
+	protected ForumManageService forumManageServiceImpl;
 	
 
 }

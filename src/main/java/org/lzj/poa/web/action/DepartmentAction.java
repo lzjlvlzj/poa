@@ -77,26 +77,20 @@ public class DepartmentAction extends BaseAction<Department> {
 	public String edit() {
 		Department dept = departmentServiceImpl.findById(model.getDeptId());
 		if(null != dept){
-			encapsulateDepartment(dept);
+			dept.setDeptName(model.getDeptName());
+			dept.setDeptValue(model.getDeptValue());
+			dept.setDescription(model.getDescription());
+			dept.setCreateTime(new Date());
+			
+			//set parentId dept.setParent(model.getParent());
+			Department parent = new Department();
+			parent.setDeptId(parentId);
+			dept.setParent(parent);
 			
 			departmentServiceImpl.update(dept);
 		}
 		return "toList";
 	}
 
-	private void encapsulateDepartment(Department dept) {
-		dept.setDeptName(model.getDeptName());
-		dept.setDeptValue(model.getDeptValue());
-		dept.setDescription(model.getDescription());
-		dept.setCreateTime(new Date());
-		
-		//set parentId dept.setParent(model.getParent());
-		Department parent = new Department();
-		parent.setDeptId(parentId);
-		dept.setParent(parent);
-		//TODO set childern
-		//TODO set User
-		
-	}
 
 }
