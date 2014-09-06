@@ -2,6 +2,7 @@ package org.lzj.poa.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 public class Forum implements Serializable {
 
@@ -15,6 +16,13 @@ public class Forum implements Serializable {
 	private String description;
 	private Integer position;
 	private Date createTime;
+	
+	private Set<Topic> Topics;	//主题
+	private int topicCount;		//主题数量
+	private int articleCount;		//文章数数量(主题 + 回复)	
+	private Topic lastTopic;	//最新主题
+	
+	
 	public Integer getForumId() {
 		return forumId;
 	}
@@ -44,6 +52,30 @@ public class Forum implements Serializable {
 	}
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+	public Set<Topic> getTopics() {
+		return Topics;
+	}
+	public void setTopics(Set<Topic> topics) {
+		Topics = topics;
+	}
+	public int getTopicCount() {
+		return topicCount;
+	}
+	public void setTopicCount(int topicCount) {
+		this.topicCount = topicCount;
+	}
+	public int getArticleCount() {
+		return articleCount;
+	}
+	public void setArticleCount(int articleCount) {
+		this.articleCount = articleCount;
+	}
+	public Topic getLastTopic() {
+		return lastTopic;
+	}
+	public void setLastTopic(Topic lastTopic) {
+		this.lastTopic = lastTopic;
 	}
 	@Override
 	public String toString() {

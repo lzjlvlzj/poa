@@ -2,13 +2,19 @@ package org.lzj.poa.web.action;
 
 import java.lang.reflect.ParameterizedType;
 
+import org.lzj.poa.common.Contants;
+import org.lzj.poa.entity.User;
 import org.lzj.poa.service.DepartmentService;
 import org.lzj.poa.service.ForumManageService;
+import org.lzj.poa.service.ForumService;
 import org.lzj.poa.service.PrivilegeService;
+import org.lzj.poa.service.ReplyService;
 import org.lzj.poa.service.RoleService;
+import org.lzj.poa.service.TopicService;
 import org.lzj.poa.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -35,6 +41,11 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 		return model;
 	}
 	
+	protected User getCurrentUser() {
+		return (User)ActionContext.getContext().getSession().get(Contants.SESSION_USER);
+	}
+
+	
 	@Autowired
 	protected DepartmentService departmentServiceImpl;
 	
@@ -49,6 +60,15 @@ public abstract class BaseAction<T> extends ActionSupport implements ModelDriven
 	
 	@Autowired
 	protected ForumManageService forumManageServiceImpl;
+	
+	@Autowired
+	protected ForumService forumServiceImpl;
+	
+	@Autowired
+	protected TopicService topicServiceImpl;
+	
+	@Autowired
+	protected ReplyService replyServiceImpl;
 	
 
 }
